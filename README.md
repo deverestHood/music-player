@@ -1,7 +1,7 @@
 # music-player
 A ZTM JavaScript music player tutorial featuring boolean logic, arrow functions, and event listeners.
 
-Audio Credit:
+Audio credit:
 
 Track 1: Music by Slip.stream - "Pixie" - https://slip.stream/tracks/44fcab9c-827d-465e-ac0b-78bc39c39f85
 
