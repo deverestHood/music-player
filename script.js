@@ -9,9 +9,8 @@ const durationEl = document.getElementById('duration');
 const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
-const audio = document.querySelector('audio');
 
-// Music
+// music
 const songs = [
     {
         name: 'Pixie',
@@ -31,11 +30,10 @@ const songs = [
         artist: 'slip.stream',
         albumArt: 'shambhavi-singh-uTUAflZAbIA-unsplash.jpg'
     }
-]
+];
 
 // Check if playing
 let isPlaying = false;
-
 // Play
 const playSong = () => {
     isPlaying = true;
@@ -44,7 +42,6 @@ const playSong = () => {
     playBtn.setAttribute('title', 'Pause');
     music.play();
 }
-
 // Pause
 const pauseSong = () => {
     isPlaying = false;
@@ -53,10 +50,8 @@ const pauseSong = () => {
     playBtn.setAttribute('title', 'Play');
     music.pause();
 }
-
 // Play or pause event listener
 playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
-
 // Update DOM
 const loadSong = song => {
     title.textContent = song.displayName;
@@ -64,10 +59,8 @@ const loadSong = song => {
     music.src = `music/${song.name}.mp3`;
     image.src = `img/${song.albumArt}`;
 }
-
 // Current song
 let songIndex = 0;
-
 // Previous song
 const prevSong = () => {
     songIndex--;
@@ -77,7 +70,6 @@ const prevSong = () => {
     loadSong(songs[songIndex]);
     playSong();
 }
-
 // Next song
 const nextSong = () => {
     songIndex++;
@@ -87,14 +79,11 @@ const nextSong = () => {
     loadSong(songs[songIndex]);
     playSong();
 }
-
 // On load - Select first song
 loadSong(songs[songIndex]);
-
 // Update progress bar & time by passing in event (e)
 const updateProgressBar = (e) => {
     if (isPlaying) {
-        // destructuring
         const { duration, currentTime } = e.srcElement;
         // update progress bar width
         const progressPercent = (currentTime / duration) * 100;
@@ -105,31 +94,27 @@ const updateProgressBar = (e) => {
         if (durationSeconds < 10) {
             durationSeconds = `0${durationSeconds}`;
         }
-
         // delay switching duration element to avoid NaN showing
         if (durationSeconds) {
             durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
         }
-
         // calculate display for currentTime
-        const currentTimeMinutes = Math.floor(currentTime / 60);
-        let currentTimeSeconds = Math.floor(currentTime % 60);
-        if (currentTimeSeconds < 10) {
-            currentTimeSeconds = `0${currentTimeSeconds}`;
+        const currentMinutes = Math.floor(currentTime / 60);
+        let currentSeconds = Math.floor(currentTime % 60);
+        if (currentSeconds < 10) {
+            currentSeconds = `0${currentSeconds}`;
         }
-        currentTimeEl.textContent = `${currentTimeMinutes}:${currentTimeSeconds}`;
+        currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
     }
 }
-
 //set progress bar
 const setProgressBar = (e) => {
-    const width = this.clientWidth;
-    const clickX = e.offsetX;
+    const width = e.srcElement.clientWidth;
+    const clickX = e.offsetX
     const { duration } = music;
     // width in seconds
     music.currentTime = (clickX / width) * duration;
 }
-
 // Event Listeners
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
