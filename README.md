@@ -1,6 +1,6 @@
 # music-player
 
-<img src="https://github.com/deverestHood/music-player/assets/125313227/e3983703-565f-4e95-a34e-db725f5241a6" height="500" width="950">
+<img src="https://github.com/deverestHood/music-player/assets/125313227/e3983703-565f-4e95-a34e-db725f5241a6" height="500" width="1000">
 
 ## Description
 
