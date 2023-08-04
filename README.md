@@ -29,7 +29,7 @@
 ## Technologies Used
 
 - JavaScript: The main programming language used for building out the logic and interactivity of the music player.
-- HTML: HTML provides structure for the the webpage and its content.
+- HTML: HTML provides structure for the webpage and its content.
 - CSS: CSS enhances the visual appearance of the music player, for a custom, polished look.
 
 
