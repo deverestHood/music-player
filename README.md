@@ -3,7 +3,7 @@
 ## View live site:
 <p><a href="deveresthood.github.io/music-player/">deveresthood.github.io/music-player/</a></p>
 
-<img src="https://github.com/deverestHood/music-player/assets/125313227/e3983703-565f-4e95-a34e-db725f5241a6" height="500" width="1000">
+<img src="https://github.com/deverestHood/music-player/assets/125313227/e3983703-565f-4e95-a34e-db725f5241a6" height="500" width="900">
 
 ## Description
 
